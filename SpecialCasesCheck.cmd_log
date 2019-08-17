@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.syr" 
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.syr" 
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.syr" 
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.syr" 
