@@ -1,2 +1,3 @@
 vhdl work "TypeCheck.vhd"
+vhdl work "NaNCheck.vhd"
 vhdl work "SpecialCasesCheck.vhd"

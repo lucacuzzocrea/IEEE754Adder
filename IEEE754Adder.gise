@@ -85,6 +85,7 @@
     </transform>
     <transform xil_pn:end_ts="1566052458" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1566052458">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1566059978" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="1167941000477774584" xil_pn:start_ts="1566059978">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -110,8 +111,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1566060235" xil_pn:in_ck="-3235492353642026610" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-5588158190480725594" xil_pn:start_ts="1566060230">
+    <transform xil_pn:end_ts="1566062385" xil_pn:in_ck="-3915287225243783751" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="4591378050783358917" xil_pn:start_ts="1566062357">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="SpecialCasesCheck.lso"/>
       <outfile xil_pn:name="SpecialCasesCheck.ngc"/>
@@ -120,23 +122,22 @@
       <outfile xil_pn:name="SpecialCasesCheck.stx"/>
       <outfile xil_pn:name="SpecialCasesCheck.syr"/>
       <outfile xil_pn:name="SpecialCasesCheck.xst"/>
+      <outfile xil_pn:name="SpecialCasesCheck_vhdl.prj"/>
       <outfile xil_pn:name="SpecialCasesCheck_xst.xrpt"/>
       <outfile xil_pn:name="TypeCheck.ngr"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1566052811" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-2497314214044977511" xil_pn:start_ts="1566052811">
+    <transform xil_pn:end_ts="1566062226" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="7014160488695491189" xil_pn:start_ts="1566062226">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1566052856" xil_pn:in_ck="-1179315243053685338" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-7709254264864982892" xil_pn:start_ts="1566052852">
-      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="TypeCheck.bld"/>
@@ -145,39 +146,9 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1566052859" xil_pn:in_ck="-1179315243053685337" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-7868858794111860816" xil_pn:start_ts="1566052856">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <outfile xil_pn:name="TypeCheck.pcf"/>
-      <outfile xil_pn:name="TypeCheck_map.map"/>
-      <outfile xil_pn:name="TypeCheck_map.mrp"/>
-      <outfile xil_pn:name="TypeCheck_map.ncd"/>
-      <outfile xil_pn:name="TypeCheck_map.ngm"/>
-      <outfile xil_pn:name="TypeCheck_map.xrpt"/>
-      <outfile xil_pn:name="TypeCheck_summary.xml"/>
-      <outfile xil_pn:name="TypeCheck_usage.xml"/>
-      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
-    </transform>
-    <transform xil_pn:end_ts="1566052863" xil_pn:in_ck="2083081054299762752" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="3266239339701135281" xil_pn:start_ts="1566052859">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <outfile xil_pn:name="TypeCheck.ncd"/>
-      <outfile xil_pn:name="TypeCheck.pad"/>
-      <outfile xil_pn:name="TypeCheck.par"/>
-      <outfile xil_pn:name="TypeCheck.ptwx"/>
-      <outfile xil_pn:name="TypeCheck.unroutes"/>
-      <outfile xil_pn:name="TypeCheck.xpi"/>
-      <outfile xil_pn:name="TypeCheck_pad.csv"/>
-      <outfile xil_pn:name="TypeCheck_pad.txt"/>
-      <outfile xil_pn:name="TypeCheck_par.xrpt"/>
-      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
-    </transform>
     <transform xil_pn:end_ts="1566052863" xil_pn:in_ck="-1179315243053685469" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1566052862">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="TypeCheck.twr"/>
       <outfile xil_pn:name="TypeCheck.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

@@ -1,37 +1,42 @@
-Release 14.7 - xst P.20131013 (lin64)
+Release 14.7 - xst P.20160913 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Reading design: SpecialCasesCheck.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
-  2) HDL Compilation
-  3) Design Hierarchy Analysis
-  4) HDL Analysis
-  5) HDL Synthesis
-     5.1) HDL Synthesis Report
-  6) Advanced HDL Synthesis
-     6.1) Advanced HDL Synthesis Report
-  7) Low Level Synthesis
-  8) Partition Report
-  9) Final Report
-	9.1) Device utilization summary
-	9.2) Partition Resource Summary
-	9.3) TIMING REPORT
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
 
 
 =========================================================================
@@ -39,13 +44,12 @@ TABLE OF CONTENTS
 =========================================================================
 ---- Source Parameters
 Input File Name                    : "SpecialCasesCheck.prj"
-Input Format                       : mixed
 Ignore Synthesis Constraint File   : NO
 
 ---- Target Parameters
 Output File Name                   : "SpecialCasesCheck"
 Output Format                      : NGC
-Target Device                      : xc3s50-5-pq208
+Target Device                      : xa6slx4-3-csg225
 
 ---- Source Options
 Top Module Name                    : SpecialCasesCheck
@@ -56,25 +60,21 @@ FSM Style                          : LUT
 RAM Extraction                     : Yes
 RAM Style                          : Auto
 ROM Extraction                     : Yes
-Mux Style                          : Auto
-Decoder Extraction                 : YES
-Priority Encoder Extraction        : Yes
 Shift Register Extraction          : YES
-Logical Shifter Extraction         : YES
-XOR Collapsing                     : YES
 ROM Style                          : Auto
-Mux Extraction                     : Yes
 Resource Sharing                   : YES
 Asynchronous To Synchronous        : NO
-Multiplier Style                   : Auto
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
 Automatic Register Balancing       : No
 
 ---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 500
-Add Generic Clock Buffer(BUFG)     : 8
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
 Register Duplication               : YES
-Slice Packing                      : YES
 Optimize Instantiated Primitives   : NO
 Use Clock Enable                   : Yes
 Use Synchronous Set                : Yes
@@ -85,6 +85,7 @@ Equivalent register Removal        : YES
 ---- General Options
 Optimization Goal                  : Speed
 Optimization Effort                : 1
+Power Reduction                    : NO
 Keep Hierarchy                     : No
 Netlist Hierarchy                  : As_Optimized
 RTL Output                         : Yes
@@ -97,7 +98,7 @@ Bus Delimiter                      : <>
 Case Specifier                     : Maintain
 Slice Utilization Ratio            : 100
 BRAM Utilization Ratio             : 100
-Verilog 2001                       : YES
+DSP48 Utilization Ratio            : 100
 Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
@@ -105,48 +106,50 @@ Slice Utilization Ratio Delta      : 5
 
 
 =========================================================================
-*                          HDL Compilation                              *
+*                          HDL Parsing                                  *
 =========================================================================
-Compiling vhdl file "/home/Luca/ISE/IEEE754Adder/TypeCheck.vhd" in Library work.
-Architecture typecheckarch of Entity typecheck is up to date.
-Compiling vhdl file "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.vhd" in Library work.
-Entity <specialcasescheck> compiled.
-Entity <specialcasescheck> (Architecture <specialcasescheckarch>) compiled.
-
-=========================================================================
-*                     Design Hierarchy Analysis                         *
-=========================================================================
-Analyzing hierarchy for entity <SpecialCasesCheck> in library <work> (architecture <specialcasescheckarch>).
-
-Analyzing hierarchy for entity <TypeCheck> in library <work> (architecture <typecheckarch>).
-
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/TypeCheck.vhd" into library work
+Parsing entity <TypeCheck>.
+Parsing architecture <TypeCheckArch> of entity <typecheck>.
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/NaNCheck.vhd" into library work
+Parsing entity <NaNCheck>.
+Parsing architecture <NaNCheckArch> of entity <nancheck>.
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/SpecialCasesCheck.vhd" into library work
+Parsing entity <SpecialCasesCheck>.
+Parsing architecture <SpecialCasesCheckArch> of entity <specialcasescheck>.
 
 =========================================================================
-*                            HDL Analysis                               *
+*                            HDL Elaboration                            *
 =========================================================================
-Analyzing Entity <SpecialCasesCheck> in library <work> (Architecture <specialcasescheckarch>).
-Entity <SpecialCasesCheck> analyzed. Unit <SpecialCasesCheck> generated.
 
-Analyzing Entity <TypeCheck> in library <work> (Architecture <typecheckarch>).
-Entity <TypeCheck> analyzed. Unit <TypeCheck> generated.
+Elaborating entity <SpecialCasesCheck> (architecture <SpecialCasesCheckArch>) from library <work>.
 
+Elaborating entity <NaNCheck> (architecture <NaNCheckArch>) from library <work>.
+
+Elaborating entity <TypeCheck> (architecture <TypeCheckArch>) from library <work>.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
-Performing bidirectional port resolution...
-
-Synthesizing Unit <TypeCheck>.
-    Related source file is "/home/Luca/ISE/IEEE754Adder/TypeCheck.vhd".
-WARNING:Xst:647 - Input <N<31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-Unit <TypeCheck> synthesized.
-
-
 Synthesizing Unit <SpecialCasesCheck>.
-    Related source file is "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.vhd".
+    Related source file is "/home/ise/gianni/IEEE754Adder/SpecialCasesCheck.vhd".
+    Summary:
+	no macro.
 Unit <SpecialCasesCheck> synthesized.
 
+Synthesizing Unit <NaNCheck>.
+    Related source file is "/home/ise/gianni/IEEE754Adder/NaNCheck.vhd".
+    Summary:
+	no macro.
+Unit <NaNCheck> synthesized.
+
+Synthesizing Unit <TypeCheck>.
+    Related source file is "/home/ise/gianni/IEEE754Adder/TypeCheck.vhd".
+WARNING:Xst:647 - Input <N<31:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <TypeCheck> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -173,7 +176,7 @@ Optimizing unit <SpecialCasesCheck> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block SpecialCasesCheck, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block SpecialCasesCheck, actual ratio is 0.
 
 Final Macro Processing ...
 
@@ -195,38 +198,45 @@ Partition Implementation Status
 -------------------------------
 
 =========================================================================
-*                            Final Report                               *
+*                            Design Summary                             *
 =========================================================================
-Final Results
-RTL Top Level Output File Name     : SpecialCasesCheck.ngr
-Top Level Output File Name         : SpecialCasesCheck
-Output Format                      : NGC
-Optimization Goal                  : Speed
-Keep Hierarchy                     : No
 
-Design Statistics
-# IOs                              : 66
+Top Level Output File Name         : SpecialCasesCheck.ngc
 
-Cell Usage :
-# BELS                             : 24
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 16
 #      GND                         : 1
-#      LUT2                        : 1
 #      LUT3                        : 2
-#      LUT4                        : 20
+#      LUT4                        : 2
+#      LUT5                        : 2
+#      LUT6                        : 9
 # IO Buffers                       : 66
 #      IBUF                        : 64
 #      OBUF                        : 2
-=========================================================================
 
 Device utilization summary:
 ---------------------------
 
-Selected Device : 3s50pq208-5 
+Selected Device : xa6slx4csg225-3 
 
- Number of Slices:                       13  out of    768     1%  
- Number of 4 input LUTs:                 23  out of   1536     1%  
+
+Slice Logic Utilization: 
+ Number of Slice LUTs:                   15  out of   2400     0%  
+    Number used as Logic:                15  out of   2400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     15
+   Number with an unused Flip Flop:      15  out of     15   100%  
+   Number with an unused LUT:             0  out of     15     0%  
+   Number of fully used LUT-FF pairs:     0  out of     15     0%  
+   Number of unique control sets:         0
+
+IO Utilization: 
  Number of IOs:                          66
- Number of bonded IOBs:                  66  out of    124    53%  
+ Number of bonded IOBs:                  66  out of    132    50%  
+
+Specific Feature Utilization:
 
 ---------------------------
 Partition Resource Summary:
@@ -238,7 +248,7 @@ Partition Resource Summary:
 
 
 =========================================================================
-TIMING REPORT
+Timing Report
 
 NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
       FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
@@ -254,50 +264,53 @@ No asynchronous control signals found in this design
 
 Timing Summary:
 ---------------
-Speed Grade: -5
+Speed Grade: -3
 
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: 13.307ns
+   Maximum combinational path delay: 7.532ns
 
-Timing Detail:
---------------
+Timing Details:
+---------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 72 / 1
+  Total number of paths / destination ports: 64 / 1
 -------------------------------------------------------------------------
-Delay:               13.307ns (Levels of Logic = 7)
-  Source:            Y<8> (PAD)
+Delay:               7.532ns (Levels of Logic = 5)
+  Source:            Y<4> (PAD)
   Destination:       isNan (PAD)
 
-  Data Path: Y<8> to isNan
+  Data Path: Y<4> to isNan
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.715   0.976  Y_8_IBUF (Y_8_IBUF)
-     LUT4:I0->O            1   0.479   0.976  isNan35 (isNan35)
-     LUT2:I0->O            1   0.479   0.704  isNan41 (isNan41)
-     LUT4:I3->O            1   0.479   0.976  isNan61 (isNan61)
-     LUT3:I0->O            1   0.479   0.976  isNan209_SW0 (N6)
-     LUT4:I0->O            1   0.479   0.681  isNan209 (isNan_OBUF)
-     OBUF:I->O                 4.909          isNan_OBUF (isNan)
+     IBUF:I->O             1   1.222   0.944  Y_4_IBUF (Y_4_IBUF)
+     LUT6:I0->O            1   0.203   0.924  NC/isNan11 (NC/isNan10)
+     LUT6:I1->O            1   0.203   0.684  NC/isNan12 (NC/isNan11)
+     LUT6:I4->O            1   0.203   0.579  NC/isNan13 (isNan_OBUF)
+     OBUF:I->O                 2.571          isNan_OBUF (isNan)
     ----------------------------------------
-    Total                     13.307ns (8.019ns logic, 5.288ns route)
-                                       (60.3% logic, 39.7% route)
+    Total                      7.532ns (4.402ns logic, 3.130ns route)
+                                       (58.4% logic, 41.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 3.05 secs
+Total REAL time to Xst completion: 22.00 secs
+Total CPU time to Xst completion: 19.75 secs
  
 --> 
 
 
-Total memory usage is 606300 kilobytes
+Total memory usage is 473740 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)
