@@ -1,4 +1,0 @@
-AR specialcasescheck specialcasescheckarch /home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.vhd sub00/vhpl03 1566060236
-EN typecheck NULL /home/Luca/ISE/IEEE754Adder/TypeCheck.vhd sub00/vhpl00 1566060233
-AR typecheck typecheckarch /home/Luca/ISE/IEEE754Adder/TypeCheck.vhd sub00/vhpl01 1566060234
-EN specialcasescheck NULL /home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.vhd sub00/vhpl02 1566060235

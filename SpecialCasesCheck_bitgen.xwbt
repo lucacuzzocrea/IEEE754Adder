@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.ncd
-OUTFILE=/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.bit
-FAMILY=Automotive Spartan6
-PART=xa6slx4-3csg225
-WORKINGDIR=/home/Luca/ISE/IEEE754Adder
-LICENSE=WebPack
-USER_INFO=211697841_0_0_919
