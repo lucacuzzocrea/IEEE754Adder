@@ -1,0 +1,5 @@
+work	"EqualCheck.vhd"
+work	"NaNCheck.vhd"
+work	"SpecialCasesCheck.vhd"
+work	"TypeCheck.vhd"
+work	"ZeroCheck.vhd"

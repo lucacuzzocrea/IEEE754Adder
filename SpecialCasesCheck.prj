@@ -1,3 +1,5 @@
 vhdl work "TypeCheck.vhd"
+vhdl work "EqualCheck.vhd"
+vhdl work "ZeroCheck.vhd"
 vhdl work "NaNCheck.vhd"
 vhdl work "SpecialCasesCheck.vhd"

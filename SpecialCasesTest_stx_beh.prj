@@ -1,0 +1,6 @@
+vhdl isim_temp "TypeCheck.vhd"
+vhdl isim_temp "EqualCheck.vhd"
+vhdl isim_temp "ZeroCheck.vhd"
+vhdl isim_temp "NaNCheck.vhd"
+vhdl isim_temp "SpecialCasesCheck.vhd"
+vhdl isim_temp "SpecialCasesTest.vhd"

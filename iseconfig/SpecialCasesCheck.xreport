@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-08-17T16:51:16</DateModified>
+  <DateModified>2019-08-24T12:13:27</DateModified>
   <ModuleName>SpecialCasesCheck</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/ise/gianni/IEEE754Adder/iseconfig/SpecialCasesCheck.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ise/gianni/IEEE754Adder/</ImplementationReportsDirectory>
-  <DateInitialized>2019-08-17T15:26:24</DateInitialized>
+  <SummaryTimeStamp>2019-08-24T10:53:09</SummaryTimeStamp>
+  <SavedFilePath>/home/Luca/ISE/IEEE754Adder/iseconfig/SpecialCasesCheck.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/Luca/ISE/IEEE754Adder/</ImplementationReportsDirectory>
+  <DateInitialized>2019-08-24T10:27:23</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

@@ -1,0 +1,29 @@
+Command line:
+   NaNCheck_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  39524
+
+Sat Aug 24 12:14:44 2019
+
+
+ Elaboration Time: 0.02 sec
+
+ Current Memory Usage: 195.346 Meg
+
+ Total Signals          : 23
+ Total Nets             : 137
+ Total Signal Drivers   : 15
+ Total Blocks           : 4
+ Total Primitive Blocks : 3
+ Total Processes        : 15
+ Total Traceable Variables  : 8
+ Total Scalar Nets and Variables : 497
+Total Line Count : 27
+
+ Total Simulation Time: 0.04 sec
+
+ Current Memory Usage: 272.945 Meg
+
+Sat Aug 24 12:14:54 2019
+

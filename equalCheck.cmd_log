@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/equalCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/equalCheck.syr" 
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/equalCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/equalCheck.syr" 

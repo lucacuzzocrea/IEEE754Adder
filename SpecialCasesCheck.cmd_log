@@ -8,3 +8,33 @@ xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn 
 xst -intstyle ise -ifn "/home/ise/gianni/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/ise/gianni/IEEE754Adder/SpecialCasesCheck.syr" 
 xst -intstyle ise -ifn "/home/ise/gianni/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/ise/gianni/IEEE754Adder/SpecialCasesCheck.syr" 
 xst -intstyle ise -ifn "/home/ise/gianni/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/ise/gianni/IEEE754Adder/SpecialCasesCheck.syr" 
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa6slx4-csg225-3 SpecialCasesCheck.ngc SpecialCasesCheck.ngd  
+map -intstyle ise -p xa6slx4-csg225-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o SpecialCasesCheck_map.ncd SpecialCasesCheck.ngd SpecialCasesCheck.pcf 
+par -w -intstyle ise -ol high -mt off SpecialCasesCheck_map.ncd SpecialCasesCheck.ncd SpecialCasesCheck.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml SpecialCasesCheck.twx SpecialCasesCheck.ncd -o SpecialCasesCheck.twr SpecialCasesCheck.pcf 
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.syr" 
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.syr" 
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa6slx4-csg225-3 SpecialCasesCheck.ngc SpecialCasesCheck.ngd  
+map -intstyle ise -p xa6slx4-csg225-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o SpecialCasesCheck_map.ncd SpecialCasesCheck.ngd SpecialCasesCheck.pcf 
+par -w -intstyle ise -ol high -mt off SpecialCasesCheck_map.ncd SpecialCasesCheck.ncd SpecialCasesCheck.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml SpecialCasesCheck.twx SpecialCasesCheck.ncd -o SpecialCasesCheck.twr SpecialCasesCheck.pcf 
+bitgen -intstyle ise -f SpecialCasesCheck.ut SpecialCasesCheck.ncd 
+netgen -intstyle ise -ar Structure -tm SpecialCasesCheck -w -dir netgen/synthesis -ofmt vhdl -sim SpecialCasesCheck.ngc SpecialCasesCheck_synthesis.vhd 
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa6slx4-csg225-3 SpecialCasesCheck.ngc SpecialCasesCheck.ngd  
+map -intstyle ise -p xa6slx4-csg225-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o SpecialCasesCheck_map.ncd SpecialCasesCheck.ngd SpecialCasesCheck.pcf 
+par -w -intstyle ise -ol high -mt off SpecialCasesCheck_map.ncd SpecialCasesCheck.ncd SpecialCasesCheck.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml SpecialCasesCheck.twx SpecialCasesCheck.ncd -o SpecialCasesCheck.twr SpecialCasesCheck.pcf 
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa6slx4-csg225-3 SpecialCasesCheck.ngc SpecialCasesCheck.ngd  
+map -intstyle ise -p xa6slx4-csg225-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o SpecialCasesCheck_map.ncd SpecialCasesCheck.ngd SpecialCasesCheck.pcf 
+par -w -intstyle ise -ol high -mt off SpecialCasesCheck_map.ncd SpecialCasesCheck.ncd SpecialCasesCheck.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml SpecialCasesCheck.twx SpecialCasesCheck.ncd -o SpecialCasesCheck.twr SpecialCasesCheck.pcf 
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.syr" 
+xst -intstyle ise -ifn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xst" -ofn "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa6slx4-csg225-3 SpecialCasesCheck.ngc SpecialCasesCheck.ngd  
+map -intstyle ise -p xa6slx4-csg225-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o SpecialCasesCheck_map.ncd SpecialCasesCheck.ngd SpecialCasesCheck.pcf 
+par -w -intstyle ise -ol high -mt off SpecialCasesCheck_map.ncd SpecialCasesCheck.ncd SpecialCasesCheck.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml SpecialCasesCheck.twx SpecialCasesCheck.ncd -o SpecialCasesCheck.twr SpecialCasesCheck.pcf 

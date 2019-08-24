@@ -1,18 +1,18 @@
-Release 14.7 - xst P.20160913 (lin64)
+Release 14.7 - xst P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: SpecialCasesCheck.prj
@@ -108,13 +108,19 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "/home/ise/gianni/IEEE754Adder/TypeCheck.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/TypeCheck.vhd" into library work
 Parsing entity <TypeCheck>.
 Parsing architecture <TypeCheckArch> of entity <typecheck>.
-Parsing VHDL file "/home/ise/gianni/IEEE754Adder/NaNCheck.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/EqualCheck.vhd" into library work
+Parsing entity <EqualCheck>.
+Parsing architecture <EqualCheckArch> of entity <equalcheck>.
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/ZeroCheck.vhd" into library work
+Parsing entity <ZeroCheck>.
+Parsing architecture <ZeroCheckArch> of entity <zerocheck>.
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/NaNCheck.vhd" into library work
 Parsing entity <NaNCheck>.
 Parsing architecture <NaNCheckArch> of entity <nancheck>.
-Parsing VHDL file "/home/ise/gianni/IEEE754Adder/SpecialCasesCheck.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.vhd" into library work
 Parsing entity <SpecialCasesCheck>.
 Parsing architecture <SpecialCasesCheckArch> of entity <specialcasescheck>.
 
@@ -128,33 +134,52 @@ Elaborating entity <NaNCheck> (architecture <NaNCheckArch>) from library <work>.
 
 Elaborating entity <TypeCheck> (architecture <TypeCheckArch>) from library <work>.
 
+Elaborating entity <ZeroCheck> (architecture <ZeroCheckArch>) from library <work>.
+
+Elaborating entity <EqualCheck> (architecture <EqualCheckArch>) with generics from library <work>.
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <SpecialCasesCheck>.
-    Related source file is "/home/ise/gianni/IEEE754Adder/SpecialCasesCheck.vhd".
+    Related source file is "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.vhd".
     Summary:
 	no macro.
 Unit <SpecialCasesCheck> synthesized.
 
 Synthesizing Unit <NaNCheck>.
-    Related source file is "/home/ise/gianni/IEEE754Adder/NaNCheck.vhd".
+    Related source file is "/home/Luca/ISE/IEEE754Adder/NaNCheck.vhd".
     Summary:
 	no macro.
 Unit <NaNCheck> synthesized.
 
 Synthesizing Unit <TypeCheck>.
-    Related source file is "/home/ise/gianni/IEEE754Adder/TypeCheck.vhd".
+    Related source file is "/home/Luca/ISE/IEEE754Adder/TypeCheck.vhd".
 WARNING:Xst:647 - Input <N<31:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	no macro.
 Unit <TypeCheck> synthesized.
 
+Synthesizing Unit <ZeroCheck>.
+    Related source file is "/home/Luca/ISE/IEEE754Adder/ZeroCheck.vhd".
+    Summary:
+Unit <ZeroCheck> synthesized.
+
+Synthesizing Unit <EqualCheck>.
+    Related source file is "/home/Luca/ISE/IEEE754Adder/EqualCheck.vhd".
+        BITCOUNT = 31
+    Summary:
+Unit <EqualCheck> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Xors                                                 : 2
+ 1-bit xor2                                            : 1
+ 31-bit xor2                                           : 1
+
 =========================================================================
 
 =========================================================================
@@ -165,7 +190,11 @@ Found no macro
 =========================================================================
 Advanced HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Xors                                                 : 2
+ 1-bit xor2                                            : 1
+ 31-bit xor2                                           : 1
+
 =========================================================================
 
 =========================================================================
@@ -176,7 +205,7 @@ Optimizing unit <SpecialCasesCheck> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block SpecialCasesCheck, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block SpecialCasesCheck, actual ratio is 1.
 
 Final Macro Processing ...
 
@@ -205,12 +234,14 @@ Top Level Output File Name         : SpecialCasesCheck.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 16
+# BELS                             : 39
 #      GND                         : 1
 #      LUT3                        : 2
-#      LUT4                        : 2
+#      LUT4                        : 3
 #      LUT5                        : 2
-#      LUT6                        : 9
+#      LUT6                        : 19
+#      MUXCY                       : 11
+#      VCC                         : 1
 # IO Buffers                       : 66
 #      IBUF                        : 64
 #      OBUF                        : 2
@@ -222,14 +253,14 @@ Selected Device : xa6slx4csg225-3
 
 
 Slice Logic Utilization: 
- Number of Slice LUTs:                   15  out of   2400     0%  
-    Number used as Logic:                15  out of   2400     0%  
+ Number of Slice LUTs:                   26  out of   2400     1%  
+    Number used as Logic:                26  out of   2400     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     15
-   Number with an unused Flip Flop:      15  out of     15   100%  
-   Number with an unused LUT:             0  out of     15     0%  
-   Number of fully used LUT-FF pairs:     0  out of     15     0%  
+ Number of LUT Flip Flop pairs used:     26
+   Number with an unused Flip Flop:      26  out of     26   100%  
+   Number with an unused LUT:             0  out of     26     0%  
+   Number of fully used LUT-FF pairs:     0  out of     26     0%  
    Number of unique control sets:         0
 
 IO Utilization: 
@@ -269,7 +300,7 @@ Speed Grade: -3
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: 7.532ns
+   Maximum combinational path delay: 7.570ns
 
 Timing Details:
 ---------------
@@ -277,24 +308,24 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 64 / 1
+  Total number of paths / destination ports: 128 / 2
 -------------------------------------------------------------------------
-Delay:               7.532ns (Levels of Logic = 5)
+Delay:               7.570ns (Levels of Logic = 5)
   Source:            Y<4> (PAD)
-  Destination:       isNan (PAD)
+  Destination:       isNaN (PAD)
 
-  Data Path: Y<4> to isNan
+  Data Path: Y<4> to isNaN
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.222   0.944  Y_4_IBUF (Y_4_IBUF)
+     IBUF:I->O             2   1.222   0.981  Y_4_IBUF (Y_4_IBUF)
      LUT6:I0->O            1   0.203   0.924  NC/isNan11 (NC/isNan10)
      LUT6:I1->O            1   0.203   0.684  NC/isNan12 (NC/isNan11)
-     LUT6:I4->O            1   0.203   0.579  NC/isNan13 (isNan_OBUF)
-     OBUF:I->O                 2.571          isNan_OBUF (isNan)
+     LUT6:I4->O            1   0.203   0.579  NC/isNan13 (isNaN_OBUF)
+     OBUF:I->O                 2.571          isNaN_OBUF (isNaN)
     ----------------------------------------
-    Total                      7.532ns (4.402ns logic, 3.130ns route)
-                                       (58.4% logic, 41.6% route)
+    Total                      7.570ns (4.402ns logic, 3.168ns route)
+                                       (58.2% logic, 41.8% route)
 
 =========================================================================
 
@@ -304,13 +335,13 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 19.75 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.87 secs
  
 --> 
 
 
-Total memory usage is 473740 kilobytes
+Total memory usage is 474696 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

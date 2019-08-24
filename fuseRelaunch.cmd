@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/Luca/ISE/IEEE754Adder/SpecialCasesTest_isim_beh.exe" -prj "/home/Luca/ISE/IEEE754Adder/SpecialCasesTest_beh.prj" "work.SpecialCasesTest" 
