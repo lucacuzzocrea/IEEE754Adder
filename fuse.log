@@ -1,21 +1,21 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/ise/gianni/IEEE754Adder/ComparatorTest_isim_beh.exe" -prj "/home/ise/gianni/IEEE754Adder/ComparatorTest_beh.prj" "work.ComparatorTest" 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/ise/gianni/IEEE754Adder/FullAdderTest_isim_beh.exe" -prj "/home/ise/gianni/IEEE754Adder/FullAdderTest_beh.prj" "work.FullAdderTest" 
 ISim P.20160913 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 1
 Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/ise/gianni/IEEE754Adder/Comparator.vhd" into library work
-Parsing VHDL file "/home/ise/gianni/IEEE754Adder/ComparatorTest.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/FullAdder.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/FullAdderTest.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Fuse Memory Usage: 95308 KB
-Fuse CPU Usage: 2480 ms
+Fuse CPU Usage: 2530 ms
 Compiling package standard
 Compiling package std_logic_1164
-Compiling architecture comparatorarch of entity Comparator [\Comparator(8)\]
-Compiling architecture behavior of entity comparatortest
+Compiling architecture fulladderarch of entity FullAdder [fulladder_default]
+Compiling architecture behavior of entity fulladdertest
 Time Resolution for simulation is 1ps.
 Compiled 5 VHDL Units
-Built simulation executable /home/ise/gianni/IEEE754Adder/ComparatorTest_isim_beh.exe
-Fuse Memory Usage: 103952 KB
-Fuse CPU Usage: 2590 ms
-GCC CPU Usage: 360 ms
+Built simulation executable /home/ise/gianni/IEEE754Adder/FullAdderTest_isim_beh.exe
+Fuse Memory Usage: 103940 KB
+Fuse CPU Usage: 2640 ms
+GCC CPU Usage: 440 ms

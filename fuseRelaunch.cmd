@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ise/gianni/IEEE754Adder/ComparatorTest_isim_beh.exe" -prj "/home/ise/gianni/IEEE754Adder/ComparatorTest_beh.prj" "work.ComparatorTest" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/gianni/IEEE754Adder/FullAdderTest_isim_beh.exe" -prj "/home/ise/gianni/IEEE754Adder/FullAdderTest_beh.prj" "work.FullAdderTest" 
