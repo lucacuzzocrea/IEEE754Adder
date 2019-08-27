@@ -1,30 +1,21 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/Luca/ISE/IEEE754Adder/SpecialCasesTest_isim_beh.exe -prj /home/Luca/ISE/IEEE754Adder/SpecialCasesTest_beh.prj work.SpecialCasesTest 
-ISim P.20131013 (signature 0xfbc00daa)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/ise/gianni/IEEE754Adder/ComparatorTest_isim_beh.exe" -prj "/home/ise/gianni/IEEE754Adder/ComparatorTest_beh.prj" "work.ComparatorTest" 
+ISim P.20160913 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/TypeCheck.vhd" into library work
-Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/EqualCheck.vhd" into library work
-Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/ZeroCheck.vhd" into library work
-Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/NaNCheck.vhd" into library work
-Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.vhd" into library work
-Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/SpecialCasesTest.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/Comparator.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/ComparatorTest.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 94420 KB
-Fuse CPU Usage: 980 ms
+Fuse Memory Usage: 95308 KB
+Fuse CPU Usage: 2480 ms
 Compiling package standard
 Compiling package std_logic_1164
-Compiling architecture typecheckarch of entity TypeCheck [typecheck_default]
-Compiling architecture nancheckarch of entity NaNCheck [nancheck_default]
-Compiling architecture equalcheckarch of entity EqualCheck [\EqualCheck(31)\]
-Compiling architecture zerocheckarch of entity ZeroCheck [zerocheck_default]
-Compiling architecture specialcasescheckarch of entity SpecialCasesCheck [specialcasescheck_default]
-Compiling architecture behavior of entity specialcasestest
+Compiling architecture comparatorarch of entity Comparator [\Comparator(8)\]
+Compiling architecture behavior of entity comparatortest
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 13 VHDL Units
-Built simulation executable /home/Luca/ISE/IEEE754Adder/SpecialCasesTest_isim_beh.exe
-Fuse Memory Usage: 658120 KB
-Fuse CPU Usage: 1000 ms
-GCC CPU Usage: 280 ms
+Compiled 5 VHDL Units
+Built simulation executable /home/ise/gianni/IEEE754Adder/ComparatorTest_isim_beh.exe
+Fuse Memory Usage: 103952 KB
+Fuse CPU Usage: 2590 ms
+GCC CPU Usage: 360 ms
