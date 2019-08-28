@@ -21,7 +21,7 @@ begin
 		for i in compVec'range loop
 			res_tmp := res_tmp or compVec(i);
 		end loop;
-		isEqual <= res_tmp;
+		isEqual <= not res_tmp;
 	end process;
 
 end EqualCheckArch;

@@ -1,0 +1,28 @@
+Command line:
+   SwapTest_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  45337
+
+Tue Aug 27 12:56:25 2019
+
+
+ Elaboration Time: 0.09 sec
+
+ Current Memory Usage: 198.603 Meg
+
+ Total Signals          : 11
+ Total Nets             : 34
+ Total Signal Drivers   : 3
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 3
+ Total Traceable Variables  : 10
+ Total Scalar Nets and Variables : 396
+
+ Total Simulation Time: 0.11 sec
+
+ Current Memory Usage: 276.201 Meg
+
+Tue Aug 27 12:56:46 2019
+
