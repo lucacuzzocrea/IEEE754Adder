@@ -1,0 +1,29 @@
+Command line:
+   SpecialCasesCheck_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  46093
+
+Sat Aug 24 14:53:42 2019
+
+
+ Elaboration Time: 0.02 sec
+
+ Current Memory Usage: 195.351 Meg
+
+ Total Signals          : 40
+ Total Nets             : 235
+ Total Signal Drivers   : 23
+ Total Blocks           : 7
+ Total Primitive Blocks : 4
+ Total Processes        : 23
+ Total Traceable Variables  : 9
+ Total Scalar Nets and Variables : 596
+Total Line Count : 38
+
+ Total Simulation Time: 0.02 sec
+
+ Current Memory Usage: 272.949 Meg
+
+Sat Aug 24 14:53:52 2019
+

@@ -16,7 +16,7 @@ architecture SpecialCasesCheckArch of SpecialCasesCheck is
 			isNaN: out std_logic
 		);
 	end component;
-	
+
 	component ZeroCheck is
 		port(
 			X, Y: in std_logic_vector(31 downto 0);

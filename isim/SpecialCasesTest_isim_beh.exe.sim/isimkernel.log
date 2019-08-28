@@ -2,9 +2,9 @@ Command line:
    SpecialCasesTest_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  47173
+     -socket  52126
 
-Sat Aug 24 12:20:10 2019
+Sat Aug 24 14:59:56 2019
 
 
  Elaboration Time: 0.01 sec
@@ -21,9 +21,9 @@ Sat Aug 24 12:20:10 2019
  Total Scalar Nets and Variables : 601
 Total Line Count : 143
 
- Total Simulation Time: 0.04 sec
+ Total Simulation Time: 0.03 sec
 
  Current Memory Usage: 272.957 Meg
 
-Sat Aug 24 14:38:35 2019
+Sat Aug 24 15:00:02 2019
 
