@@ -76,3 +76,7 @@ _xmsgs/
 
 # Fuck isim
 isim/
+# Fuck other useless Xilinx files that always generate conflicts
+fuse.log
+isim.log
+fuseRelaunch.cmd
