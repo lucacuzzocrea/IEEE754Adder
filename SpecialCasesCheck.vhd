@@ -33,10 +33,10 @@ architecture SpecialCasesCheckArch of SpecialCasesCheck is
 	
 begin
 
-	NC: NaNCheck
+	NC : NaNCheck
 		port map (X => X, Y => Y, IS_NAN => IS_NAN);
 		
-	ZC: ZeroCheck
+	ZC : ZeroCheck
 		port map (X => X, Y => Y, IS_ZERO => IS_ZERO);
 		
 end SpecialCasesCheckArch;

@@ -42,7 +42,7 @@ begin
 
 	IS_SAME_SIGN <= S_SIGN xnor Y_SIGN;
 	
-	AbsCheck: EqualCheck
+	ABS_CHECK : EqualCheck
 		generic map ( BITCOUNT => 31 )
 		port map (X => X_ABS, Y => Y_ABS, IS_EQUAL => IS_SAME_ABS_VALUE);
 	

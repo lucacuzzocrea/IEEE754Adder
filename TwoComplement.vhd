@@ -23,7 +23,7 @@ begin
 
 	SIGN <= DIFF_EXP_C2(BITCOUNT-1);
 	
-	C2_PROCESS : process(DIFF_EXP_C2, SIGN)
+	C2_PROCESS : process (DIFF_EXP_C2, SIGN)
 	
 	begin
 	
@@ -33,7 +33,7 @@ begin
 		
 	end process;
 	
-	SUM : process(DIFF_EXP_ABS, SIGN)
+	SUM : process (DIFF_EXP_ABS, SIGN)
 	
 		variable CARRY : std_logic;
 	

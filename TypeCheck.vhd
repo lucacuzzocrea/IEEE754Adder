@@ -22,7 +22,7 @@ begin
 	G_BUS <= N(30 downto 23);
 	T_BUS <= N(22 downto 0);
 	
-	G_compute: process (G_BUS)
+	G_PROCESS : process (G_BUS)
 	
 		variable G_TMP : std_logic;
 		
@@ -38,7 +38,7 @@ begin
 		
 	end process;
 	
-	T_compute: process (T_BUS)
+	T_PROCESS : process (T_BUS)
 	
 		variable T_TMP : std_logic;
 		

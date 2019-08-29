@@ -4,7 +4,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Comparator is
 
-	generic( BITCOUNT : integer := 8 );
+	generic(
+		BITCOUNT : integer := 8
+	);
 	
 	port(
 		X_MANT, Y_MANT : in std_logic_vector((BITCOUNT-1) downto 0);
@@ -23,7 +25,7 @@ begin
 	X_GT_Y <= X_MANT and (not Y_MANT);
 	Y_GT_X <= (not X_MANT) and Y_MANT;
 	
-	NEED_SWAP_COMPUTE: process (X_GT_Y, Y_GT_X)
+	NEED_SWAP_PROCESS : process (X_GT_Y, Y_GT_X)
 	
 		variable SWAP : std_logic;
 		variable SWAP_CARRY : std_logic;

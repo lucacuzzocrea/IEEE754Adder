@@ -19,7 +19,7 @@ architecture SwapArch of Swap is
 
 begin
 
-	SWAP_PROCESS: process(X_IN, Y_IN, SW)
+	SWAP_PROCESS : process (X_IN, Y_IN, SW)
 	
 	begin
 	

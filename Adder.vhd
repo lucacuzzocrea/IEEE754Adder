@@ -3,37 +3,51 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 
 entity Adder is
-	generic( BITCOUNT: integer := 8 );
-	port(
-		X, Y: in std_logic_vector((BITCOUNT-1) downto 0);
-		carry_in: in std_logic;
-		result: out std_logic_vector((BITCOUNT-1) downto 0);
-		carry_out: out std_logic
+
+	generic(
+		BITCOUNT : integer := 8
 	);
+	
+	port(
+		X, Y : in std_logic_vector((BITCOUNT-1) downto 0);
+		CARRY_IN : in std_logic;
+		RESULT : out std_logic_vector((BITCOUNT-1) downto 0);
+		CARRY_OUT : out std_logic
+	);
+	
 end Adder;
 
 architecture CarryLookAheadArch of Adder is
-	signal generation: std_logic_vector((BITCOUNT-1) downto 0);
-	signal propagation: std_logic_vector((BITCOUNT-1) downto 0);
-	signal carry: std_logic_vector((BITCOUNT-1) downto 0);
-	signal sum_no_carry: std_logic_vector((BITCOUNT-1) downto 0);
-begin
-	generation <= X and Y;
-	propagation <= X or Y;
-	sum_no_carry <= X xor Y;
 
-	carry_look_ahead: process (generation, propagation, carry_in)
-		variable C: std_logic;
+	signal GENERATION : std_logic_vector((BITCOUNT-1) downto 0);
+	signal PROPAGATION : std_logic_vector((BITCOUNT-1) downto 0);
+	signal CARRY : std_logic_vector((BITCOUNT-1) downto 0);
+	signal SUM_NO_CARRY : std_logic_vector((BITCOUNT-1) downto 0);
+	
+begin
+
+	GENERATION <= X and Y;
+	PROPAGATION <= X or Y;
+	SUM_NO_CARRY <= X xor Y;
+
+	CARRY_LOOK_AHEAD_PROCESS : process (GENERATION, PROPAGATION, CARRY_IN)
+	
+		variable C : std_logic;
+		
 	begin
-		C := carry_in;
-		carry(0) <= C;
+	
+		C := CARRY_IN;
+		CARRY(0) <= C;
+		
 		for i in 1 to (BITCOUNT-1) loop
-			C := generation(i-1) or (propagation(i-1) and C);
-			carry(i) <= C;
+			C := GENERATION(i-1) or (PROPAGATION(i-1) and C);
+			CARRY(i) <= C;
 		end loop;
+		
 	end process;
 
-	result <= sum_no_carry xor carry;
-	carry_out <= (X(BITCOUNT-1) and Y(BITCOUNT-1)) or (X(BITCOUNT-1) and carry(BITCOUNT-1)) or (carry(BITCOUNT-1) and Y(BITCOUNT-1));
+	RESULT <= SUM_NO_CARRY xor CARRY;
+	CARRY_OUT <= (X(BITCOUNT-1) and Y(BITCOUNT-1)) or (X(BITCOUNT-1) and CARRY(BITCOUNT-1)) or (CARRY(BITCOUNT-1) and Y(BITCOUNT-1));
+
 end CarryLookAheadArch;
 
