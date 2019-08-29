@@ -1,0 +1,83 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Sat Aug 24 14:51:32 2019
+# Process ID: 7025
+# Log file: /home/Luca/ISE/IEEE754Adder/planAhead_run_1/planAhead.log
+# Journal file: /home/Luca/ISE/IEEE754Adder/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source /home/Luca/ISE/IEEE754Adder/pa.fromNcd.tcl
+# create_project -name IEEE754Adder -dir "/home/Luca/ISE/IEEE754Adder/planAhead_run_1" -part xa6slx4csg225-3
+# set srcset [get_property srcset [current_run -impl]]
+# set_property design_mode GateLvl $srcset
+# set_property edif_top_file "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {/home/Luca/ISE/IEEE754Adder} }
+# set_property target_constrs_file "SpecialCasesCheck.ucf" [current_fileset -constrset]
+Adding file '/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.ucf' to fileset 'constrs_1'
+# add_files [list {SpecialCasesCheck.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xa6slx4csg225-3
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design SpecialCasesCheck.ngc ...
+WARNING:NetListWriters:298 - No output is written to SpecialCasesCheck.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file SpecialCasesCheck.edif ...
+ngc2edif: Total memory usage is 103004 kilobytes
+
+Parsing EDIF File [./planAhead_run_1/IEEE754Adder.data/cache/SpecialCasesCheck_ngc_ec4f3bca.edif]
+Finished Parsing EDIF File [./planAhead_run_1/IEEE754Adder.data/cache/SpecialCasesCheck_ngc_ec4f3bca.edif]
+Loading clock regions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/aspartan6/xa6slx4/ClockRegion.xml
+Loading clock buffers from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/aspartan6/xa6slx4/ClockBuffers.xml
+Loading package pin functions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/aspartan6/xa6slx4/csg225/Package.xml
+Loading io standards from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.ucf]
+Finished Parsing UCF File [/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 684e9dfa
+link_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 2835.180 ; gain = 156.531
+# read_xdl -file "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.ncd"
+Release 14.7 - xdl P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+WARNING:XDL:213 - The resulting xdl output will not have LUT equation strings or RAM INIT strings.
+Loading device for application Rf_Device from file '6slx4.nph' in environment /opt/Xilinx/14.7/ISE_DS/ISE/.
+   "SpecialCasesCheck" is an NCD, version 3.2, device xa6slx4, package csg225, speed -3
+Successfully converted design '/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.ncd' to '/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.xdl'.
+INFO: [Designutils 20-669] Parsing Placement File : /home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.ncd
+INFO: [Designutils 20-658] Finished Parsing Placement File : /home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.ncd
+INFO: [Designutils 20-671] Placed 103 instances
+read_xdl: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 2835.180 ; gain = 0.000
+# if {[catch {read_twx -name results_1 -file "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.twx"} eInfo]} {
+#    puts "WARNING: there was a problem importing \"/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.twx\": $eInfo"
+# }
+exit
+ERROR: [#UNDEF] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+ (See /home/Luca/ISE/IEEE754Adder/planAhead_pid7025.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Sat Aug 24 14:52:27 2019...
+INFO: [Common 17-83] Releasing license: PlanAhead

@@ -18,6 +18,8 @@ architecture EqualCheckArch of EqualCheck is
 
 	signal COMP_VEC : std_logic_vector((BITCOUNT-1) downto 0);
 	
+
+
 begin
 
 	COMP_VEC <= X xor Y;

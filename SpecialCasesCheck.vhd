@@ -21,7 +21,7 @@ architecture SpecialCasesCheckArch of SpecialCasesCheck is
 		);
 		
 	end component;
-	
+
 	component ZeroCheck is
 	
 		port(
