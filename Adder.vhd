@@ -22,15 +22,18 @@ begin
 	propagation <= X or Y;
 	sum_no_carry <= X xor Y;
 
-	carry_look_ahead: process (generation, propagation, carry, carry_in)
+	carry_look_ahead: process (generation, propagation, carry_in)
+		variable C: std_logic;
 	begin
-		carry(0) <= carry_in;
-		for i in (BITCOUNT-1) downto 1 loop
-			carry(i) <= generation(i) or (propagation(i) and carry(i-1));
+		C := carry_in;
+		carry(0) <= C;
+		for i in 1 to (BITCOUNT-1) loop
+			C := generation(i-1) or (propagation(i-1) and C);
+			carry(i) <= C;
 		end loop;
 	end process;
 
 	result <= sum_no_carry xor carry;
-	carry_out <= sum_no_carry(BITCOUNT-1) xor carry(BITCOUNT-1);
+	carry_out <= (X(BITCOUNT-1) and Y(BITCOUNT-1)) or (X(BITCOUNT-1) and carry(BITCOUNT-1)) or (carry(BITCOUNT-1) and Y(BITCOUNT-1));
 end CarryLookAheadArch;
 

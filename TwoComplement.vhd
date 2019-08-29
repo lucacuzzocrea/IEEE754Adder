@@ -5,7 +5,7 @@ entity TwoComplement is
 	generic(BITCOUNT : integer := 8);
 	port(
 		DIFF_EXP_C2 : in std_logic_vector((BITCOUNT-1) downto 0);
-		DIFF_EXP_ABS : out std_logic_vector((BITCOUNT-2) downto 0);
+		DIFF_EXP_ABS : out std_logic_vector((BITCOUNT-2) downto 0)
 	);
 end TwoComplement;
 
