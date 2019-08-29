@@ -15,7 +15,7 @@ architecture NaNCheckArch of NaNCheck is
 	component TypeCheck is
 	
 		port(
-			N : in std_logic_vector(31 downto 0);
+			N : in std_logic_vector(30 downto 0);
 			NAN, INF : out std_logic
 		);
 		
@@ -31,10 +31,10 @@ architecture NaNCheckArch of NaNCheck is
 begin
 
 	xCheck: TypeCheck
-		port map (N => X, NAN => X_NAN, INF => X_INF);
+		port map (N => X(30 downto 0), NAN => X_NAN, INF => X_INF);
 		
 	yCheck: TypeCheck
-		port map (N => Y, NAN => Y_NAN, INF => Y_INF);
+		port map (N => Y(30 downto 0), NAN => Y_NAN, INF => Y_INF);
 
 	X_SIGN <= X(31);
 	Y_SIGN <= Y(31);

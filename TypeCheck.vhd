@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity TypeCheck is
 
 	port(
-		N : in std_logic_vector(31 downto 0);
+		N : in std_logic_vector(30 downto 0);
 		NAN, INF : out std_logic
 	);
 	
