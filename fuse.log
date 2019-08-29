@@ -1,24 +1,21 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/Luca/ISE/IEEE754Adder/AddSubTest_isim_beh.exe -prj /home/Luca/ISE/IEEE754Adder/AddSubTest_beh.prj work.AddSubTest 
-ISim P.20131013 (signature 0xfbc00daa)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/gianni/IEEE754Adder/TwoComplementTest_isim_beh.exe -prj /home/ise/gianni/IEEE754Adder/TwoComplementTest_beh.prj work.TwoComplementTest 
+ISim P.20160913 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/Adder.vhd" into library work
-Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/AddSub.vhd" into library work
-Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/AddSubTest.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/TwoComplement.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/TwoComplementTest.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 94376 KB
-Fuse CPU Usage: 1040 ms
+Fuse Memory Usage: 95308 KB
+Fuse CPU Usage: 2300 ms
 Compiling package standard
 Compiling package std_logic_1164
-Compiling architecture carrylookaheadarch of entity Adder [\Adder(8)\]
-Compiling architecture addsubarch of entity AddSub [\AddSub(8)\]
-Compiling architecture behavior of entity addsubtest
+Compiling architecture twocomplementarch of entity TwoComplement [\TwoComplement(8)\]
+Compiling architecture behavior of entity twocomplementtest
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 7 VHDL Units
-Built simulation executable /home/Luca/ISE/IEEE754Adder/AddSubTest_isim_beh.exe
-Fuse Memory Usage: 658004 KB
-Fuse CPU Usage: 1060 ms
-GCC CPU Usage: 210 ms
+Compiled 5 VHDL Units
+Built simulation executable /home/ise/gianni/IEEE754Adder/TwoComplementTest_isim_beh.exe
+Fuse Memory Usage: 103960 KB
+Fuse CPU Usage: 2400 ms
+GCC CPU Usage: 1480 ms

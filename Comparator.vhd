@@ -3,31 +3,43 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 
 entity Comparator is
-	generic( BITCOUNT: integer := 8 );
+
+	generic( BITCOUNT : integer := 8 );
+	
 	port(
-		xT, yT: in std_logic_vector((BITCOUNT-1) downto 0);
-		needSwap: out std_logic
+		X_MANT, Y_MANT : in std_logic_vector((BITCOUNT-1) downto 0);
+		NEED_SWAP : out std_logic
 	);
+	
 end Comparator;
 
 architecture ComparatorArch of Comparator is
-	signal xGTy: std_logic_vector((BITCOUNT-1) downto 0);
-	signal yGTx: std_logic_vector((BITCOUNT-1) downto 0);
-begin
-	xGTy <= xT and (not yT);
-	yGTx <= (not xT) and yT;
+
+	signal X_GT_Y : std_logic_vector((BITCOUNT-1) downto 0);
+	signal Y_GT_X : std_logic_vector((BITCOUNT-1) downto 0);
 	
-	needSwap_compute: process (xGTy, yGTx)
-		variable SW: std_logic;
-		variable K: std_logic;
+begin
+
+	X_GT_Y <= X_MANT and (not Y_MANT);
+	Y_GT_X <= (not X_MANT) and Y_MANT;
+	
+	NEED_SWAP_COMPUTE: process (X_GT_Y, Y_GT_X)
+	
+		variable SWAP : std_logic;
+		variable SWAP_CARRY : std_logic;
+	
 	begin
-		SW := '0';
-		K := '1';
+	
+		SWAP := '0';
+		SWAP_CARRY := '1';
+		
 		for i in (BITCOUNT-1) downto 0 loop
-			SW := SW or ((not(xGTy(i)) and yGTx(i)) and K);
-			K := K and (not(xGTy(i) and not(yGTx(i))));
+			SWAP := SWAP or ((not(X_GT_Y(i)) and Y_GT_X(i)) and SWAP_CARRY);
+			SWAP_CARRY := SWAP_CARRY and (not(X_GT_Y(i) and not(Y_GT_X(i))));
 		end loop;
-		needSwap <= SW;
+		
+		NEED_SWAP <= SWAP;
+		
 	end process;
 
 end ComparatorArch;
