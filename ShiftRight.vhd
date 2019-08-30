@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-
 entity ShiftRight48 is
 	
 	port(
@@ -18,7 +17,9 @@ architecture ShiftRightArch of ShiftRight48 is
 begin
 
 	asdf: process (N, PLACES)
+	
 	begin
+	
 		case PLACES is
 			when "000000000" => RESULT <= N( 47 downto 0 );
 			when "000000001" => RESULT <= "0" & N( 47 downto 1 );
@@ -67,9 +68,10 @@ begin
 			when "000101100" => RESULT <= "00000000000000000000000000000000000000000000" & N( 47 downto 44 );
 			when "000101101" => RESULT <= "000000000000000000000000000000000000000000000" & N( 47 downto 45 );
 			when "000101110" => RESULT <= "0000000000000000000000000000000000000000000000" & N( 47 downto 46 );
+			when "000101111" => RESULT <= "00000000000000000000000000000000000000000000000" & N( 47 );
 			when others   => RESULT <= "000000000000000000000000000000000000000000000000";
 		end case;
+		
 	end process;
-
 
 end ShiftRightArch;

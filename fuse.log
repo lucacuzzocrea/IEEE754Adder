@@ -1,21 +1,11 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/gianni/IEEE754Adder/TwoComplementTest_isim_beh.exe -prj /home/ise/gianni/IEEE754Adder/TwoComplementTest_beh.prj work.TwoComplementTest 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/gianni/IEEE754Adder/SumDataAdapterTest_isim_beh.exe -prj /home/ise/gianni/IEEE754Adder/SumDataAdapterTest_beh.prj work.SumDataAdapterTest 
 ISim P.20160913 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 1
 Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/ise/gianni/IEEE754Adder/TwoComplement.vhd" into library work
-Parsing VHDL file "/home/ise/gianni/IEEE754Adder/TwoComplementTest.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/ShiftRight.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/SumDataAdapter.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/SumDataAdapterTest.vhd" into library work
 Starting static elaboration
-Completed static elaboration
-Fuse Memory Usage: 95308 KB
-Fuse CPU Usage: 2300 ms
-Compiling package standard
-Compiling package std_logic_1164
-Compiling architecture twocomplementarch of entity TwoComplement [\TwoComplement(8)\]
-Compiling architecture behavior of entity twocomplementtest
-Time Resolution for simulation is 1ps.
-Compiled 5 VHDL Units
-Built simulation executable /home/ise/gianni/IEEE754Adder/TwoComplementTest_isim_beh.exe
-Fuse Memory Usage: 103960 KB
-Fuse CPU Usage: 2400 ms
-GCC CPU Usage: 1480 ms
+ERROR:HDLCompiler:410 - "/home/ise/gianni/IEEE754Adder/SumDataAdapterTest.vhd" Line 74: Expression has 30 elements ; expected 31
+ERROR:Simulator:777 - Static elaboration of top level VHDL design unit sumdataadaptertest in library work failed

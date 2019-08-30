@@ -12,8 +12,8 @@ ARCHITECTURE behavior OF SpecialCasesTest IS
     PORT(
          X : IN  std_logic_vector(31 downto 0);
          Y : IN  std_logic_vector(31 downto 0);
-         isNaN : OUT  std_logic;
-         isZero : OUT  std_logic
+         IS_NAN : OUT  std_logic;
+         IS_ZERO : OUT  std_logic
         );
     END COMPONENT;
     
@@ -23,10 +23,8 @@ ARCHITECTURE behavior OF SpecialCasesTest IS
    signal Y : std_logic_vector(31 downto 0) := (others => '0');
 
  	--Outputs
-   signal isNaN : std_logic;
-   signal isZero : std_logic;
-   -- No clocks detected in port list. Replace clock below with 
-   -- appropriate port name 
+   signal IS_NAN : std_logic;
+   signal IS_ZERO : std_logic;
 	signal clock : std_logic;
 	
 	
@@ -42,8 +40,8 @@ BEGIN
    uut: SpecialCasesCheck PORT MAP (
           X => X,
           Y => Y,
-          isNaN => isNaN,
-          isZero => isZero
+          IS_NAN => IS_NAN,
+          IS_ZERO => IS_ZERO
         );
 
    -- Clock process definitions
@@ -160,6 +158,6 @@ BEGIN
 		wait for clock_period;
    end process;
 
-	error <= (expectedNaN xor isNaN) or (expectedZero xor isZero);
+	error <= (expectedNaN xor IS_NAN) or (expectedZero xor IS_ZERO);
 
 END;

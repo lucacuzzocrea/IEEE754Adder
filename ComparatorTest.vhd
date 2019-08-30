@@ -11,21 +11,19 @@ ARCHITECTURE behavior OF ComparatorTest IS
  
     COMPONENT Comparator
     PORT(
-         xT : IN  std_logic_vector(7 downto 0);
-         yT : IN  std_logic_vector(7 downto 0);
-         needSwap : OUT  std_logic
+         X_MANT : IN  std_logic_vector(7 downto 0);
+         Y_MANT : IN  std_logic_vector(7 downto 0);
+         NEED_SWAP : OUT  std_logic
         );
     END COMPONENT;
     
 
    --Inputs
-   signal xT : std_logic_vector(7 downto 0) := "11111111";
-   signal yT : std_logic_vector(7 downto 0) := "11111111";
+   signal X_MANT : std_logic_vector(7 downto 0) := (others => '0');
+   signal Y_MANT : std_logic_vector(7 downto 0) := (others => '0');
 
  	--Outputs
-   signal needSwap : std_logic;
-   -- No clocks detected in port list. Replace clock below with 
-   -- appropriate port name 
+   signal NEED_SWAP : std_logic;
 	signal clock: std_logic;
  
    constant clock_period : time := 10 ns;
@@ -34,9 +32,9 @@ BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: Comparator PORT MAP (
-          xT => xT,
-          yT => yT,
-          needSwap => needSwap
+          X_MANT => X_MANT,
+          Y_MANT => Y_MANT,
+          NEED_SWAP => NEED_SWAP
         );
 
    -- Clock process definitions
@@ -48,18 +46,32 @@ BEGIN
 		wait for clock_period/2;
    end process;
  
-
-   -- Stimulus process
-   stim_proc: process
-   begin		
-      -- hold reset state for 100 ns.
-      wait for 100 ns;	
-
-      wait for clock_period*10;
-
-      -- insert stimulus here 
-
-      wait;
-   end process;
+	test_proc: process
+   begin
+		X_MANT <= "00000000";
+		Y_MANT <= "00000000";
+      wait for clock_period;
+		X_MANT <= "01011010";
+		Y_MANT <= "01100000";
+      wait for clock_period;
+		X_MANT <= "00111100";
+		Y_MANT <= "10000100";
+      wait for clock_period;
+		X_MANT <= "10000000";
+		Y_MANT <= "01111111";
+      wait for clock_period;
+		X_MANT <= "01110100";
+		Y_MANT <= "01101000";
+      wait for clock_period;
+		X_MANT <= "01111111";
+		Y_MANT <= "10000000";
+      wait for clock_period;
+		X_MANT <= "10101010";
+		Y_MANT <= "01010101";
+      wait for clock_period;
+		X_MANT <= "01010101";
+		Y_MANT <= "10101010";
+      wait for clock_period;
+	end process;
 
 END;
