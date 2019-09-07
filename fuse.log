@@ -1,11 +1,21 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/gianni/IEEE754Adder/SumDataAdapterTest_isim_beh.exe -prj /home/ise/gianni/IEEE754Adder/SumDataAdapterTest_beh.prj work.SumDataAdapterTest 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/gianni/IEEE754Adder/OutputSelectorTest_isim_beh.exe -prj /home/ise/gianni/IEEE754Adder/OutputSelectorTest_beh.prj work.OutputSelectorTest 
 ISim P.20160913 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 1
 Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/ise/gianni/IEEE754Adder/ShiftRight.vhd" into library work
-Parsing VHDL file "/home/ise/gianni/IEEE754Adder/SumDataAdapter.vhd" into library work
-Parsing VHDL file "/home/ise/gianni/IEEE754Adder/SumDataAdapterTest.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/OutputSelector.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/OutputSelectorTest.vhd" into library work
 Starting static elaboration
-ERROR:HDLCompiler:410 - "/home/ise/gianni/IEEE754Adder/SumDataAdapterTest.vhd" Line 74: Expression has 30 elements ; expected 31
-ERROR:Simulator:777 - Static elaboration of top level VHDL design unit sumdataadaptertest in library work failed
+Completed static elaboration
+Fuse Memory Usage: 95300 KB
+Fuse CPU Usage: 2310 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling architecture outputselectorarch of entity OutputSelector [outputselector_default]
+Compiling architecture behavior of entity outputselectortest
+Time Resolution for simulation is 1ps.
+Compiled 5 VHDL Units
+Built simulation executable /home/ise/gianni/IEEE754Adder/OutputSelectorTest_isim_beh.exe
+Fuse Memory Usage: 103948 KB
+Fuse CPU Usage: 2410 ms
+GCC CPU Usage: 550 ms
