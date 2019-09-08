@@ -21,7 +21,7 @@ begin
 	begin
 	
 		case PLACES is
-			when "000000000" => RESULT <= N( 47 downto 0 );
+			when "000000000" => RESULT <=      N( 47 downto 0 );
 			when "000000001" => RESULT <= "0" & N( 47 downto 1 );
 			when "000000010" => RESULT <= "00" & N( 47 downto 2 );
 			when "000000011" => RESULT <= "000" & N( 47 downto 3 );
@@ -69,7 +69,7 @@ begin
 			when "000101101" => RESULT <= "000000000000000000000000000000000000000000000" & N( 47 downto 45 );
 			when "000101110" => RESULT <= "0000000000000000000000000000000000000000000000" & N( 47 downto 46 );
 			when "000101111" => RESULT <= "00000000000000000000000000000000000000000000000" & N( 47 );
-			when others   => RESULT <= "000000000000000000000000000000000000000000000000";
+			when others      => RESULT <= "000000000000000000000000000000000000000000000000";
 		end case;
 		
 	end process;
