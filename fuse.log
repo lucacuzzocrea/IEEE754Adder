@@ -1,36 +1,80 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/Luca/ISE/IEEE754Adder/NormalizerTest_isim_beh.exe -prj /home/Luca/ISE/IEEE754Adder/NormalizerTest_beh.prj work.NormalizerTest 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/Luca/ISE/IEEE754Adder/IEEE754AdderTest_isim_beh.exe -prj /home/Luca/ISE/IEEE754Adder/IEEE754AdderTest_beh.prj work.IEEE754AdderTest 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
 Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/UTILS.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/TypeCheck.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/EqualCheck.vhd" into library work
 Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/Adder.vhd" into library work
 Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/ZeroCounter.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/ZeroCheck.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/ShiftRight.vhd" into library work
 Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/ShiftLeft.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/NaNCheck.vhd" into library work
 Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/Comparator.vhd" into library work
 Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/AddSub.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/TwoComplement.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/Swap.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/SumDataAdapter.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/SpecialCasesCheck.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/PrepareForShift.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/OutputSelector.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/OperationCheck.vhd" into library work
 Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/Normalizer.vhd" into library work
-Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/NormalizerTest.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/CarryLookAhead.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/PipelineStageTwo.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/PipelineStageThree.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/PipelineStageOne.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/FlipFlopDVector.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/FlipFlopD.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/IEEE754Adder.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/IEEE754AdderTest.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 96516 KB
-Fuse CPU Usage: 1020 ms
+Fuse Memory Usage: 97552 KB
+Fuse CPU Usage: 990 ms
 Compiling package standard
 Compiling package std_logic_1164
+Compiling architecture flipflopdvectorarch of entity FlipFlopDVector [\FlipFlopDVector(32)\]
+Compiling architecture typecheckarch of entity TypeCheck [typecheck_default]
+Compiling architecture nancheckarch of entity NaNCheck [nancheck_default]
+Compiling architecture equalcheckarch of entity EqualCheck [\EqualCheck(31)\]
+Compiling architecture zerocheckarch of entity ZeroCheck [zerocheck_default]
+Compiling architecture specialcasescheckarch of entity SpecialCasesCheck [specialcasescheck_default]
+Compiling architecture comparatorarch of entity Comparator [\Comparator(23)\]
+Compiling architecture carrylookaheadarch of entity Adder [\Adder(8)\]
+Compiling architecture addsubarch of entity AddSub [\AddSub(8)\]
+Compiling architecture prepareforshiftarch of entity PrepareForShift [prepareforshift_default]
+Compiling architecture swaparch of entity Swap [\Swap(32)\]
+Compiling architecture twocomplementarch of entity TwoComplement [\TwoComplement(9)\]
+Compiling architecture stageonearch of entity PipelineStageOne [pipelinestageone_default]
+Compiling architecture flipflopdvectorarch of entity FlipFlopDVector [\FlipFlopDVector(9)\]
+Compiling architecture flipflopdarch of entity FlipFlopD [flipflopd_default]
+Compiling architecture shiftrightarch of entity ShiftRight48 [shiftright48_default]
+Compiling architecture sumdataadapterarch of entity SumDataAdapter [sumdataadapter_default]
+Compiling architecture operationcheckarch of entity OperationCheck [operationcheck_default]
+Compiling architecture carrylookaheadarch of entity Adder [\Adder(48)\]
+Compiling architecture addsubarch of entity AddSub [\AddSub(48)\]
+Compiling architecture carrylookaheadarch of entity CarryLookAhead [carrylookahead_default]
+Compiling architecture stagetwoarch of entity PipelineStageTwo [pipelinestagetwo_default]
+Compiling architecture flipflopdvectorarch of entity FlipFlopDVector [\FlipFlopDVector(8)\]
+Compiling architecture flipflopdvectorarch of entity FlipFlopDVector [\FlipFlopDVector(48)\]
 Compiling package numeric_std
 Compiling package math_real
 Compiling package utils
 Compiling architecture zerocounterarch of entity ZeroCounter [\ZeroCounter(48,8)\]
 Compiling architecture comparatorarch of entity Comparator [\Comparator(8)\]
-Compiling architecture carrylookaheadarch of entity Adder [\Adder(8)\]
-Compiling architecture addsubarch of entity AddSub [\AddSub(8)\]
 Compiling architecture shiftleftarch of entity ShiftLeft48 [shiftleft48_default]
 Compiling architecture normalizerarch of entity Normalizer [normalizer_default]
-Compiling architecture behavior of entity normalizertest
+Compiling architecture outputselectorarch of entity OutputSelector [outputselector_default]
+Compiling architecture stagethreearch of entity PipelineStageThree [pipelinestagethree_default]
+Compiling architecture behavioral of entity IEEE754Adder [ieee754adder_default]
+Compiling architecture behavior of entity ieee754addertest
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 18 VHDL Units
-Built simulation executable /home/Luca/ISE/IEEE754Adder/NormalizerTest_isim_beh.exe
-Fuse Memory Usage: 670604 KB
-Fuse CPU Usage: 1130 ms
-GCC CPU Usage: 480 ms
+Waiting for 2 sub-compilation(s) to finish...
+Compiled 68 VHDL Units
+Built simulation executable /home/Luca/ISE/IEEE754Adder/IEEE754AdderTest_isim_beh.exe
+Fuse Memory Usage: 671904 KB
+Fuse CPU Usage: 1160 ms
+GCC CPU Usage: 1140 ms
