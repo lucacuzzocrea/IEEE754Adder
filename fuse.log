@@ -1,21 +1,36 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/gianni/IEEE754Adder/OutputSelectorTest_isim_beh.exe -prj /home/ise/gianni/IEEE754Adder/OutputSelectorTest_beh.prj work.OutputSelectorTest 
-ISim P.20160913 (signature 0xfbc00daa)
-Number of CPUs detected in this system: 1
-Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/Luca/ISE/IEEE754Adder/NormalizerTest_isim_beh.exe -prj /home/Luca/ISE/IEEE754Adder/NormalizerTest_beh.prj work.NormalizerTest 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/ise/gianni/IEEE754Adder/OutputSelector.vhd" into library work
-Parsing VHDL file "/home/ise/gianni/IEEE754Adder/OutputSelectorTest.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/UTILS.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/Adder.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/ZeroCounter.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/ShiftLeft.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/Comparator.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/AddSub.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/Normalizer.vhd" into library work
+Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/NormalizerTest.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 95300 KB
-Fuse CPU Usage: 2310 ms
+Fuse Memory Usage: 96516 KB
+Fuse CPU Usage: 1020 ms
 Compiling package standard
 Compiling package std_logic_1164
-Compiling architecture outputselectorarch of entity OutputSelector [outputselector_default]
-Compiling architecture behavior of entity outputselectortest
+Compiling package numeric_std
+Compiling package math_real
+Compiling package utils
+Compiling architecture zerocounterarch of entity ZeroCounter [\ZeroCounter(48,8)\]
+Compiling architecture comparatorarch of entity Comparator [\Comparator(8)\]
+Compiling architecture carrylookaheadarch of entity Adder [\Adder(8)\]
+Compiling architecture addsubarch of entity AddSub [\AddSub(8)\]
+Compiling architecture shiftleftarch of entity ShiftLeft48 [shiftleft48_default]
+Compiling architecture normalizerarch of entity Normalizer [normalizer_default]
+Compiling architecture behavior of entity normalizertest
 Time Resolution for simulation is 1ps.
-Compiled 5 VHDL Units
-Built simulation executable /home/ise/gianni/IEEE754Adder/OutputSelectorTest_isim_beh.exe
-Fuse Memory Usage: 103948 KB
-Fuse CPU Usage: 2410 ms
-GCC CPU Usage: 550 ms
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 18 VHDL Units
+Built simulation executable /home/Luca/ISE/IEEE754Adder/NormalizerTest_isim_beh.exe
+Fuse Memory Usage: 670604 KB
+Fuse CPU Usage: 1130 ms
+GCC CPU Usage: 480 ms

@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ise/gianni/IEEE754Adder/OutputSelectorTest_isim_beh.exe" -prj "/home/ise/gianni/IEEE754Adder/OutputSelectorTest_beh.prj" "work.OutputSelectorTest" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/Luca/ISE/IEEE754Adder/NormalizerTest_isim_beh.exe" -prj "/home/Luca/ISE/IEEE754Adder/NormalizerTest_beh.prj" "work.NormalizerTest" 

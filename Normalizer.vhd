@@ -94,9 +94,9 @@ begin
 			EXP_ADD_RIGHT <= "00000001";
 			EXP_ADD_ISSUB <= '0';
 		elsif (IS_FINAL_EXP_MINIMUM = '1') then
-			EXP_ADD_LEFT <= "01111111"; --127
-			EXP_ADD_RIGHT <= EXP;
-			EXP_ADD_ISSUB <= '1';
+			EXP_ADD_LEFT <= "00000000";
+			EXP_ADD_RIGHT <= "00000000";
+			EXP_ADD_ISSUB <= '0';
 		else
 			EXP_ADD_LEFT <= EXP;
 			EXP_ADD_RIGHT <= ZERO_COUNT;
@@ -108,10 +108,10 @@ begin
 		generic map ( BITCOUNT => 8 )
 		port map ( X => EXP_ADD_LEFT, Y => EXP_ADD_RIGHT, IS_SUB => EXP_ADD_ISSUB, RESULT => EXP_ADDSUB_RES, OVERFLOW => EXP_ADDSUB_OF );
 
-	shift_process: process (IS_FINAL_EXP_MINIMUM, EXP_ADDSUB_RES, ZERO_COUNT)
+	shift_process: process (IS_FINAL_EXP_MINIMUM, EXP, ZERO_COUNT)
 	begin
 		if (IS_FINAL_EXP_MINIMUM = '1') then
-			LEFT_SHIFT_AMOUNT <= '0' & EXP_ADDSUB_RES;
+			LEFT_SHIFT_AMOUNT <= '0' & EXP;
 		else
 			LEFT_SHIFT_AMOUNT <= '0' & ZERO_COUNT;
 		end if;
@@ -123,30 +123,31 @@ begin
 		port map ( N => MANT, PLACES => LEFT_SHIFT_AMOUNT, RESULT => LEFT_SHIFTED_MANT_TMP );
 	LEFT_SHIFTED_MANT <= LEFT_SHIFTED_MANT_TMP(47 downto 25);
 	
-	final_process: process (SUM_OVERFLOW, IS_FINAL_EXP_MINIMUM, EXP_ADDSUB_RES, EXP_ADDSUB_OF, RIGHT_SHIFTED_MANT, LEFT_SHIFTED_MANT)
+	final_process: process (SUM_OVERFLOW, IS_FINAL_EXP_MINIMUM, EXP_ADDSUB_RES, EXP_ADDSUB_OF, RIGHT_SHIFTED_MANT, LEFT_SHIFTED_MANT, EXP)
 		variable IS_INF : std_logic;
+		variable IS_INF_ORIGINAL_EXP : std_logic;
+		variable IS_INF_FINAL_EXP : std_logic;
 	begin
-		if (SUM_OVERFLOW = '1') then
-			IS_INF := '1';
-			for i in EXP_ADDSUB_RES'range loop
-				IS_INF := IS_INF and EXP_ADDSUB_RES(i);
-			end loop;
-			IS_INF := IS_INF or EXP_ADDSUB_OF;
-			
-			if (IS_INF = '1') then
-				FINAL_EXP <= "11111111";
-				FINAL_MANT <= "00000000000000000000000";
-			else
+		IS_INF_ORIGINAL_EXP  := '1';
+		for i in EXP'range loop
+			IS_INF_ORIGINAL_EXP := IS_INF_ORIGINAL_EXP and EXP(i);
+		end loop;
+		IS_INF_FINAL_EXP := '1';
+		for i in EXP_ADDSUB_RES'range loop
+			IS_INF_FINAL_EXP := IS_INF_FINAL_EXP and EXP_ADDSUB_RES(i);
+		end loop;
+		IS_INF := IS_INF_ORIGINAL_EXP or IS_INF_FINAL_EXP or EXP_ADDSUB_OF;
+		
+		if (IS_INF = '1') then
+			FINAL_EXP <= "11111111";
+			FINAL_MANT <= "00000000000000000000000";
+		else
+			if (SUM_OVERFLOW = '1') then
 				FINAL_EXP <= EXP_ADDSUB_RES;
 				FINAL_MANT <= RIGHT_SHIFTED_MANT;
-			end if;
-		else
-			if (IS_FINAL_EXP_MINIMUM = '1') then
-				FINAL_EXP <= "00000000";
-				FINAL_MANT <= LEFT_SHIFTED_MANT;
 			else
 				FINAL_EXP <= EXP_ADDSUB_RES;
-				FINAL_MANT <= LEFT_SHIFTED_MANT;
+				FINAL_MANT <= LEFT_SHIFTED_MANT;			
 			end if;
 		end if;
 	end process;
