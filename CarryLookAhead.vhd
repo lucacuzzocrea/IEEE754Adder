@@ -36,8 +36,6 @@ begin
 	CLA : AddSub
 		generic map (BITCOUNT => 48)
 		port map (X => X, Y => Y, IS_SUB => OP, RESULT => RESULT, OVERFLOW => OVERFLOW);
-		
-	--OVERFLOW <= OVERFLOW_TMP xor OP;
 
 end CarryLookAheadArch;
 

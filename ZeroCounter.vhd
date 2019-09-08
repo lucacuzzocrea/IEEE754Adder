@@ -1,6 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
+use IEEE.MATH_REAL.ALL;
 
 entity ZeroCounter is
 	generic(
@@ -15,12 +16,14 @@ entity ZeroCounter is
 end ZeroCounter;
 
 architecture ZeroCounterArch of ZeroCounter is
+	signal ALLZERO_SIGNAL : std_logic;
 begin
 
-	ZEROCOUNT_PROCESS: process (X)
+	ZEROCOUNT_PROCESS: process (X, ALLZERO_SIGNAL)
 		variable ZC: std_logic_vector((RES_BITCOUNT-1) downto 0);
 		variable BIN_N: std_logic_vector((RES_BITCOUNT-1) downto 0);
 		variable PART_ZC: std_logic_vector((BITCOUNT-1) downto 0);
+		variable ALLZERO_PART_ZC: std_logic;
 	begin
 		ZC := ((RES_BITCOUNT-1) downto 0 => '0');
 		PART_ZC := ((BITCOUNT-1) downto 0 => '1');
@@ -41,6 +44,16 @@ begin
 			end loop;
 		end loop;
 		
+		-- CHECK IF ALL_ZEROS FITS IN RESULT
+		if ( BITCOUNT < (2 ** RES_BITCOUNT) ) then
+			BIN_N := std_logic_vector(to_unsigned(BITCOUNT, BIN_N'length));
+			for res_i in (RES_BITCOUNT-1) downto 0 loop
+				if ( BIN_N(res_i) = '1' ) then 
+					ZC(res_i) := ZC(res_i) or ALLZERO_SIGNAL;
+				end if;
+			end loop;
+		end if;
+
 		Z_COUNT <= ZC;
 
 	end process;
@@ -53,8 +66,10 @@ begin
 		for i in X'range loop
 			AZ := AZ and (not X(i));
 		end loop;
-		ALL_ZEROS <= AZ;
+		ALLZERO_SIGNAL <= AZ;
 	end process;
+	
+	ALL_ZEROS <= ALLZERO_SIGNAL;
 
 end ZeroCounterArch;
 
