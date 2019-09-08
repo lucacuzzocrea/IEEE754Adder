@@ -32,19 +32,34 @@ begin
 
 	FILL <= (others => '0');
 
-	X_Y_FST_BIT_PROCESS : process (X_IN, Y_IN)
+	X_FST_BIT_PROCESS : process (X_IN)
 		
-		variable X_FST_TMP : std_logic := '0';
-		variable Y_FST_TMP : std_logic := '0';
+		variable X_FST_TMP : std_logic;
 		
 	begin
 	
+		X_FST_TMP := '0';
+	
 		for i in 30 downto 23 loop
 			X_FST_TMP := X_FST_TMP or X_IN(i);
-			Y_FST_TMP := Y_FST_TMP or Y_IN(i);
 		end loop;
 		
 		X_FST_BIT <= X_FST_TMP;
+	
+	end process;
+	
+	Y_FST_BIT_PROCESS : process (Y_IN)
+		
+		variable Y_FST_TMP : std_logic;
+		
+	begin
+	
+		Y_FST_TMP := '0';
+		
+		for i in 30 downto 23 loop
+			Y_FST_TMP := Y_FST_TMP or Y_IN(i);
+		end loop;
+		
 		Y_FST_BIT <= Y_FST_TMP;
 	
 	end process;
@@ -54,7 +69,7 @@ begin
 	SHIFTER : ShiftRight48
 		port map (N => N, PLACES => DIFF_EXP, RESULT => Y_OUT);
 
-	--X_OUT <= X_FST_BIT & X_IN(22 downto 0) & FILL;
+		X_OUT <= X_FST_BIT & X_IN(22 downto 0) & FILL;
 	
 end SumDataAdapterArch;
 

@@ -1,23 +1,21 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/Luca/ISE/IEEE754Adder/ZeroCounterTest_isim_beh.exe -prj /home/Luca/ISE/IEEE754Adder/ZeroCounterTest_beh.prj work.ZeroCounterTest 
-ISim P.20131013 (signature 0xfbc00daa)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/gianni/IEEE754Adder/OutputSelectorTest_isim_beh.exe -prj /home/ise/gianni/IEEE754Adder/OutputSelectorTest_beh.prj work.OutputSelectorTest 
+ISim P.20160913 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/ZeroCounter.vhd" into library work
-Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/ZeroCounterTest.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/OutputSelector.vhd" into library work
+Parsing VHDL file "/home/ise/gianni/IEEE754Adder/OutputSelectorTest.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 95772 KB
-Fuse CPU Usage: 1030 ms
+Fuse Memory Usage: 95300 KB
+Fuse CPU Usage: 2310 ms
 Compiling package standard
 Compiling package std_logic_1164
-Compiling package numeric_std
-Compiling architecture zerocounterarch of entity ZeroCounter [\ZeroCounter(8,3)\]
-Compiling architecture behavior of entity zerocountertest
+Compiling architecture outputselectorarch of entity OutputSelector [outputselector_default]
+Compiling architecture behavior of entity outputselectortest
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 6 VHDL Units
-Built simulation executable /home/Luca/ISE/IEEE754Adder/ZeroCounterTest_isim_beh.exe
-Fuse Memory Usage: 665500 KB
-Fuse CPU Usage: 1100 ms
-GCC CPU Usage: 170 ms
+Compiled 5 VHDL Units
+Built simulation executable /home/ise/gianni/IEEE754Adder/OutputSelectorTest_isim_beh.exe
+Fuse Memory Usage: 103948 KB
+Fuse CPU Usage: 2410 ms
+GCC CPU Usage: 550 ms
