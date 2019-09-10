@@ -32,8 +32,8 @@ Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/IEEE754Adder.vhd" into library wo
 Parsing VHDL file "/home/Luca/ISE/IEEE754Adder/IEEE754AdderTest.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 97552 KB
-Fuse CPU Usage: 990 ms
+Fuse Memory Usage: 97548 KB
+Fuse CPU Usage: 950 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling architecture flipflopdvectorarch of entity FlipFlopDVector [\FlipFlopDVector(32)\]
@@ -72,9 +72,9 @@ Compiling architecture stagethreearch of entity PipelineStageThree [pipelinestag
 Compiling architecture behavioral of entity IEEE754Adder [ieee754adder_default]
 Compiling architecture behavior of entity ieee754addertest
 Time Resolution for simulation is 1ps.
-Waiting for 2 sub-compilation(s) to finish...
+Waiting for 3 sub-compilation(s) to finish...
 Compiled 68 VHDL Units
 Built simulation executable /home/Luca/ISE/IEEE754Adder/IEEE754AdderTest_isim_beh.exe
-Fuse Memory Usage: 671904 KB
-Fuse CPU Usage: 1160 ms
-GCC CPU Usage: 1140 ms
+Fuse Memory Usage: 671896 KB
+Fuse CPU Usage: 1120 ms
+GCC CPU Usage: 1130 ms

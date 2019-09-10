@@ -73,7 +73,6 @@ architecture NormalizerArch of Normalizer is
 	signal LEFT_SHIFT_AMOUNT: std_logic_vector(8 downto 0);
 	signal LEFT_SHIFTED_MANT: std_logic_vector(22 downto 0);
 	signal LEFT_SHIFTED_MANT_TMP: std_logic_vector(47 downto 0);
-	signal RIGHT_SHIFTED_MANT: std_logic_vector(22 downto 0);
 	signal FINAL_MANT: std_logic_vector(22 downto 0);
 
 begin
@@ -117,13 +116,11 @@ begin
 		end if;
 	end process;
 
-
-	RIGHT_SHIFTED_MANT <= '1' & MANT(47 downto 26);
 	SL: ShiftLeft48
 		port map ( N => MANT, PLACES => LEFT_SHIFT_AMOUNT, RESULT => LEFT_SHIFTED_MANT_TMP );
-	LEFT_SHIFTED_MANT <= LEFT_SHIFTED_MANT_TMP(47 downto 25);
+	LEFT_SHIFTED_MANT <= LEFT_SHIFTED_MANT_TMP(46 downto 24);
 	
-	final_process: process (SUM_OVERFLOW, IS_FINAL_EXP_MINIMUM, EXP_ADDSUB_RES, EXP_ADDSUB_OF, RIGHT_SHIFTED_MANT, LEFT_SHIFTED_MANT, EXP)
+	final_process: process (SUM_OVERFLOW, IS_FINAL_EXP_MINIMUM, EXP_ADDSUB_RES, EXP_ADDSUB_OF, LEFT_SHIFTED_MANT, EXP, MANT)
 		variable IS_INF : std_logic;
 		variable IS_INF_ORIGINAL_EXP : std_logic;
 		variable IS_INF_FINAL_EXP : std_logic;
@@ -144,7 +141,7 @@ begin
 		else
 			if (SUM_OVERFLOW = '1') then
 				FINAL_EXP <= EXP_ADDSUB_RES;
-				FINAL_MANT <= RIGHT_SHIFTED_MANT;
+				FINAL_MANT <= MANT(47 downto 25);
 			else
 				FINAL_EXP <= EXP_ADDSUB_RES;
 				FINAL_MANT <= LEFT_SHIFTED_MANT;			

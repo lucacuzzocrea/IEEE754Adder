@@ -1,0 +1,31 @@
+#:C0     
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   SPARC M2.1 P.20131013
+#Current Working Directory:
+#:D   /home/Luca/ISE/IEEE754Adder
+#Host Name:
+#:H   Xilinx
+#Date/Time:
+#:T   Mon Sep  9 19:07:26 2019
+#------------------------------
+	#Reading IEEE754Adder.ncd...
+	#Loading device for application Rf_Device from file '6slx75.nph' in environment /opt/Xilinx/14.7/ISE_DS/ISE/.
+	#   "IEEE754Adder" is an NCD, version 3.2, device xc6slx75, package fgg676, speed -3
+	#Design creation date: 2019.09.09.17.05.24
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+unselect -all
+	#3
+select site 'SLICE_X14Y76'
+	#site "SLICE_X14Y76",  type = SLICEM  (RPM grid X41Y312)
+	#4
+unselect -all
+	#5
+select site 'SLICE_X14Y76'
+	#site "SLICE_X14Y76",  type = SLICEM  (RPM grid X41Y312)
+	#6
+post block
